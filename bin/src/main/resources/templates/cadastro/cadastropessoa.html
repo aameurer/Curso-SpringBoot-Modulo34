@@ -18,17 +18,17 @@
 	<form action="salvarpessoa" method="post" th:object="${pessoaobj}">
 		<label>ID</label>
 		<input name="id" th:field="*{id}">
-	
-		<label>None</label>
-		<input name="nome" th:field="*{nome}">
-		<label>Sobre Nome</label>
-		<input name="sobrenome" th:field="*{sobrenome}">
-		<label>Idadee</label>
-		<input name="idade" th:field="*{idade}">
 		
-		<input class="waves-effect waves-light btn" type="submit" value="Salvar">
-	
+	<label>None</label>	
+	<input name="nome"th:field="*{nome}">
+	<label>Sobre Nome</label>	
+	<input name="sobrenome"th:field="*{sobrenome}">	
+	<label>Idadee</label>	
+	<input name="idade"th:field="*{idade}">
+	<input class="waves-effect waves-light btn" type="submit" value="Salvar">
+			
 	</form>
+	
 	<a href="/listapessoas" >Listar as Pessoas</a>
 	
 	<table>
