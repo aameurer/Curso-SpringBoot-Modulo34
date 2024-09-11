@@ -12,10 +12,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = {"curso.*"}) // pra forçar o spring achar os pacotes
 @EnableJpaRepositories(basePackages = {"curso.springboot.springboot.repository"})
 @EnableTransactionManagement
-public class SpringsootApplication {
+public class SpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringsootApplication.class, args);
+		SpringApplication.run(SpringbootApplication.class, args);
 	}
 
 }
