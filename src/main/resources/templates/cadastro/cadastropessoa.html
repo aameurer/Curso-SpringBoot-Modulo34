@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">    
+	  <!--  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> -->
 	
 <html>
 <head>
@@ -23,6 +26,14 @@
 	<h5>Cadastro de Pessoa</h5>
 	
 	<div class="row">
+		
+<br/>		
+	<!-- Criando um for pra mostrar as menssagem de erro -->
+	<div th:each = "m : ${msg}"
+		<span th:text = "${m}"></span>/>
+	</div>	
+<br/>		
+		
 	<form action="salvarpessoa" id="formpessoa" method="post" th:object="${pessoaobj}" class="col s12">
 		
 		<div class="row">
@@ -43,7 +54,8 @@
 			</div>
 		</div>
 		
-		<div class="row">
+		<!-- Adiciona a verificação se é Admin e mostra, pode passar varios ('ROLE_ADMIN', 'ROLE_USER') -->
+		<div class="row" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')">
 			<div class="input-fiel col s12">
 				<label for="idade" class="active">Idade</label>
 				<input name="idade" th:field="*{idade}" id="idade" class="validate">
